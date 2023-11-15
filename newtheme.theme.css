@@ -42,5 +42,39 @@
 }
 
 /* Any custom CSS below here */
-
+[class^=messageListItem__][data-is-self="true"] {
+margin-left: auto;
+width: fit-content;
+padding-right: 48px;
+    [class^=container_],
+    .embedAuthor_cb4bfc {
+    direction: rtl;
+    }
+    [class^=contents_] {
+    display: inline-block;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: 8px;
+    }
+    [class^=repliedMessage_],
+    [class^=contents_] [class*=messageContent__],
+    a:not([class*=embed_] [class*=embedAuthorNameLink_]) {
+    margin-left: auto;
+    }
+    [class^=avatar__] {
+    left: unset;
+    right: -8px;
+    }
+    [class^=header__],
+    [class*=messageContent__] {
+    display: flex;
+    flex-direction: row-reverse;
+    }
+    [class*=timestampInline_] {
+    top: 2px;
+    left: unset;
+    right: 8px;
+    }
+}
 
