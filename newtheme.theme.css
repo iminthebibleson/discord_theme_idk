@@ -18,6 +18,9 @@
 @import url('https://schnensch0.github.io/zelk/main.css');
 @import url('https://discord-custom-covers.github.io/usrbg/dist/usrbg.css');
 @import url('https://mwittrien.github.io/BetterDiscordAddons/Themes/_res/SettingsIcons.css');
+@import url('https://capnkitten.github.io/BetterDiscord/Themes/Material-Discord/css/source.css');
+@import url('https://capnkitten.github.io/BetterDiscord/Themes/Material-Discord/css/addons/material-you/source.css');
+
 
 :root {
   --background-image: url('https://i.imgur.com/DbjpLBI.png');
@@ -65,4 +68,13 @@
   --rs-offline-color: #636b75;
   --rs-streaming-color: #643da7;
   --rs-phone-visible: block;
+  --avatar-radius: 50%; /*	-	*/
+	--message-radius: 19px;
+	--message-padding-top: 8px;
+	--message-padding-side: 12px; /*	-	*/
+	--media-radius: 19px; /*	-	*/
+	--card-radius: 8px;
+	--card-radius-big: 18px; /*	-	*/
+	--popout-radius: 8px;
+	--popout-radius-big: 18px;
 }
