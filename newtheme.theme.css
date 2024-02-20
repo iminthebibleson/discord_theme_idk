@@ -1084,11 +1084,3 @@ a[href="https://support.discord.com"]
 	--primary-660: var(--bg-3);
 	/* search popout "enter" bar */
 }
-
-.element-with-scrollbar {
-    overflow: hidden;
-}
-
-body {
-    overflow: hidden;
-}
