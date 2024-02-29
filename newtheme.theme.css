@@ -1084,3 +1084,14 @@ a[href="https://support.discord.com"]
 	--primary-660: var(--bg-3);
 	/* search popout "enter" bar */
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for Firefox */
+* {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
