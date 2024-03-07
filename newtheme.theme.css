@@ -5,6 +5,15 @@
 @import url('https://discordstyles.github.io/Fluent/Icons.css');
 @import url('https://dablulite.github.io/css-snippets/BetterModals/import.css');
 
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
 :root {
 	/* amount of spacing and padding */
 	--spacing: 12px;
@@ -1084,14 +1093,3 @@ a[href="https://support.discord.com"]
 	--primary-660: var(--bg-3);
 	/* search popout "enter" bar */
 }
-
-::-webkit-scrollbar {
-    display: none;
-}
-
-/* Hide scrollbar for Firefox */
-* {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
