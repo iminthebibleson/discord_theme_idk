@@ -88,16 +88,6 @@
 	--embed-line-width: 256px;
 }
 
-.embedFull__14919 {
-	border-left: calc(4px + var(--embed-line-width)) solid var(--background-accent);
-	background: var(--background-secondary);
-}
-
-.grid__35551 {
-	margin-left: calc(-1 * var(--embed-line-width));
-	z-index: 1;
-}
-
 .embedFull__14919: after,
 .embedFull__14919: before {
 	content: "";
