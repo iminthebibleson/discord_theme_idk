@@ -71,6 +71,10 @@
 	/* change to 'block' to show default discord icon */
 }
 
+div.container__0bd59.normalStylesDefault__1c2f5.pollContainer_cfb8c7 {
+  background-color: rgb(28, 31, 38);
+}
+
 /*Embeds*/
 :root {
 	--embed-border-radius: 8px;
