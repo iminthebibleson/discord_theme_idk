@@ -362,7 +362,6 @@ rect[fill='#23a55a'] {
 .searchResultsWrap_c2b47d::before
 /* search results */
 ,
-.profilePanel_b433b4::before
 
 /* dm profile */
 	{
@@ -557,6 +556,7 @@ a[href="https://support.discord.com"]
 	{
 	border-radius: 0 0 var(--roundness) var(--roundness);
 }
+
 
 /* separate guilds panel background */
 .guilds_a4d4d9 {
@@ -929,15 +929,6 @@ a[href="https://support.discord.com"]
 	--polls-voted-border: var(--green-330);
 	--polls-voted-fill: var(--green-160);
 	--polls-voted-label: var(--primary-600);
-	--profile-gradient-card-background: hsl(var(--black-500-hsl) / 0.7);
-	--profile-gradient-message-input-border: hsl(var(--primary-500-hsl) / 0.48);
-	--profile-gradient-note-background: hsl(var(--black-500-hsl) / 0.3);
-	--profile-gradient-overlay: hsl(var(--black-500-hsl) / 0.6);
-	--profile-gradient-overlay-synced-with-user-theme: hsl(var(--black-500-hsl) / 0.8);
-	--profile-gradient-profile-body-background-hover: hsl(var(--white-500-hsl) / 0.16);
-	--profile-gradient-role-pill-background: hsl(var(--primary-660-hsl) / 0.5);
-	--profile-gradient-role-pill-border: hsl(var(--white-500-hsl) / 0.2);
-	--profile-gradient-section-box: hsl(var(--black-500-hsl) / 0.45);
 	--redesign-activity-card-background: var(--primary-560);
 	--redesign-activity-card-background-pressed: var(--primary-630);
 	--redesign-activity-card-badge-icon: var(--primary-360);
@@ -1031,13 +1022,12 @@ a[href="https://support.discord.com"]
 	--text-warning: var(--yellow-300);
 	--textbox-markdown-syntax: var(--primary-360);
 	--theme-locked-blur-fallback: hsl(var(--primary-700-hsl) / 0.96);
-	--user-profile-header-overflow-background: hsl(var(--primary-700-hsl) / 0.5);
+
+
 	--voice-video-tile-blur-fallback: hsl(var(--primary-700-hsl) / 0.48);
 	--voice-video-video-tile-blur-fallback: hsl(var(--primary-700-hsl) / 0.48);
 	--white: var(--white-500);
 
-	--profile-gradient-primary-color: var(--bg-4);
-	--profile-gradient-secondary-color: var(--bg-4);
 
 	--elevation-low: none;
 	--search-popout-option-fade: none;
