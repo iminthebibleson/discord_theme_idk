@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
 ::-webkit-scrollbar {
 	display: none;
 }
@@ -32,10 +33,6 @@
 	/* color of accented buttons when clicked */
 	--accent-5: hsl(190, 80%, 30%);
 
-	/* color of mentions and messages that mention you */
-	--mention: hsla(190, 80%, 52%, 0.1);
-	/* color of mentions and messages that mention you when hovered */
-	--mention-hover: hsla(190, 80%, 52%, 0.05);
 
 	/* color of bright text on colored buttons */
 	--text-1: hsl(220, 40%, 90%);
@@ -71,8 +68,12 @@
 	/* change to 'block' to show default discord icon */
 }
 
+.cozy_f9f2ca .timestamp_f9f2ca {
+  color: var(--text-4);
+}
+
 div.container_a1531c.normalStylesDefault_b5cb3c.pollContainer_b558d0 {
-  background-color: rgb(28, 31, 38);
+	background-color: rgb(28, 31, 38);
 }
 
 /*Embeds*/
@@ -289,13 +290,6 @@ div.message_d5deea.replying_d5deea::before
 /* unread divider */
 	{
 	--status-danger: var(--accent-3);
-}
-
-.message_d5deea.mentioned_d5deea:before
-
-/* mention message left edge */
-	{
-	background: var(--accent-3);
 }
 
 .container_cebd1c.checked_cebd1c
@@ -730,13 +724,6 @@ a[href="https://support.discord.com"]
 	padding-top: 2px;
 }
 
-/* improve highlight message left edge */
-.message_d5deea.mentioned_d5deea::before,
-.replying_d5deea::before {
-	width: 4px;
-	border-radius: 4px;
-}
-
 /* make emoji selector same color */
 .emojiButtonNormal_af14ca .sprite_af14ca {
 	filter: grayscale(100%) brightness(40%) sepia(0.9) hue-rotate(180deg) !important;
@@ -756,11 +743,11 @@ a[href="https://support.discord.com"]
 	--activity-card-background: var(--primary-700);
 	--android-navigation-bar-background: var(--primary-830);
 	--android-navigation-scrim-background: hsl(var(--primary-830-hsl) / 0.5);
+	--mention-background: var(--mention);
+	--mention-foreground: var(-accent--1);
 	--android-ripple: hsl(var(--white-500-hsl) / 0.07);
 	--background-accent: var(--bg-2);
 	--background-floating: var(--bg-3);
-	--background-mentioned: var(--mention);
-	--background-mentioned-hover: var(--mention-hover);
 	--background-message-automod: hsl(var(--red-400-hsl) / 0.05);
 	--background-message-automod-hover: hsl(var(--red-400-hsl) / 0.1);
 	--background-message-highlight: var(--active);
@@ -917,8 +904,8 @@ a[href="https://support.discord.com"]
 	--legacy-blur-fallback-ultra-thin: hsl(var(--black-500-hsl) / 0.95);
 	--live-stage-tile-border: hsl(var(--primary-500-hsl) / 0.6);
 	--logo-primary: var(--white-500);
-	--mention-background: var(--mention);
 	--mention-foreground: var(--accent-1);
+	--mention: hsla(190, 80%, 52%, 0.1);
 	--modal-background: var(--bg-4);
 	--modal-footer-background: var(--bg-4);
 	--navigator-header-tint: var(--white-500);
@@ -1058,119 +1045,6 @@ a[href="https://support.discord.com"]
 }
 
 
-/* Credits
-TheCommieAxolotl - Base code
-Debuggerz1 - Math
- */
-
-:root {
-	--chat-bubble: 1;
-
-	--chat-bubble-background-color: var(--background-secondary);
-	--chat-bubble-border-color: var(--background-secondary-alt);
-	--chat-bubble-code-background-color: var(--background-secondary-alt);
-
-	--chat-bubble-max-width: 90%;
-	--chat-bubble-border-radius: 8px;
-
-	--chat-bubble-box-shadow-h-offset: 0;
-	--chat-bubble-box-shadow-v-offset: 4px;
-	--chat-bubble-box-shadow-blur: 4px;
-
-	--chat-bubble-box-shadow-color-h: 0;
-	--chat-bubble-box-shadow-color-s: 0%;
-	--chat-bubble-box-shadow-color-l: 0%;
-	--chat-bubble-box-shadow-color-a: 0.16;
-}
-
-.groupStart_d5deea.cozyMessage_d5deea>.contents_ec86aa,
-.cozyMessage_d5deea:not(.groupStart_d5deea)>.contents_ec86aa>.markup_d6076c:not(:empty, .searchResultsWrap_c2b47d *) {
-	background: linear-gradient(var(--chat-bubble-background-color, var(--background-primary)), var(--chat-bubble-background-color, var(--background-primary)));
-	background-size: calc(var(--chat-bubble) * 1px);
-	max-width: calc(100% - ((100% - var(--chat-bubble-max-width)) * var(--chat-bubble)));
-	width: fit-content;
-	margin: 0;
-	padding: calc(7px * var(--chat-bubble)) calc(12px * var(--chat-bubble));
-	border-radius: calc(var(--chat-bubble-border-radius) * var(--chat-bubble));
-	border: calc(1px * var(--chat-bubble)) solid var(--chat-bubble-border-color, var(--background-primary-border-color));
-	box-shadow: var(--chat-bubble-box-shadow-h-offset) calc(var(--chat-bubble-box-shadow-v-offset) * var(--chat-bubble)) calc(var(--chat-bubble-box-shadow-blur) * var(--chat-bubble)) hsla(var(--chat-bubble-box-shadow-color-h), var(--chat-bubble-box-shadow-color-s), var(--chat-bubble-box-shadow-color-l), calc(var(--chat-bubble-box-shadow-color-a) * var(--chat-bubble)));
-}
-
-.cozyMessage_d5deea.automodMessage_d5deea:before,
-.cozyMessage_d5deea.ephemeral_d5deea:before,
-.cozyMessage_d5deea.mentioned_d5deea:before,
-.cozyMessage_d5deea.replying_d5deea:before {
-	width: calc(2px - (var(--chat-bubble) * 2px));
-}
-
-.groupStart_d5deea.cozyMessage_d5deea.mentioned_d5deea .contents_ec86aa,
-.cozyMessage_d5deea.mentioned_d5deea:not(.groupStart_d5deea) .contents_ec86aa>.markup_d6076c:not(:empty, .searchResultsWrap_c2b47d *) {
-	background: linear-gradient(var(--background-mentioned), var(--background-mentioned));
-	background-size: calc(var(--chat-bubble) * 1px);
-	border: calc(1px * var(--chat-bubble)) solid var(--info-warning-foreground);
-}
-
-.cozyMessage_d5deea.mentioned_d5deea {
-	background: linear-gradient(var(--background-mentioned), var(--background-mentioned));
-	background-size: calc((1 - var(--chat-bubble)) * 1px);
-}
-
-.groupStart_d5deea.cozyMessage_d5deea.replying_d5deea .contents_ec86aa,
-.cozyMessage_d5deea.replying_d5deea:not(.groupStart_d5deea) .contents_ec86aa>.markup_d6076c:not(:empty, .searchResultsWrap_c2b47d *),
-.groupStart_d5deea.cozyMessage_d5deea.ephemeral_d5deea .contents_ec86aa,
-.cozyMessage_d5deea.ephemeral_d5deea:not(.groupStart_d5deea) .contents_ec86aa>.markup_d6076c:not(:empty, .searchResultsWrap_c2b47d *) {
-	background: linear-gradient(var(--brand-experiment-05a), var(--brand-experiment-05a));
-	background-size: calc(var(--chat-bubble) * 1px);
-	border: calc(1px * var(--chat-bubble)) solid var(--brand-experiment);
-}
-
-.cozyMessage_d5deea.replying_d5deea,
-.cozyMessage_d5deea.ephemeral_d5deea {
-	background: linear-gradient(var(--brand-experiment-05a), var(--brand-experiment-05a));
-	background-size: calc((1 - var(--chat-bubble)) * 1px);
-}
-
-.groupStart_d5deea.cozyMessage_d5deea.automodMessage_d5deea .contents_ec86aa,
-.cozyMessage_d5deea.automodMessage_d5deea:not(.groupStart_d5deea) .contents_ec86aa>.markup_d6076c:not(:empty, .searchResultsWrap_c2b47d *) {
-	background: linear-gradient(var(--background-message-automod), var(--background-message-automod));
-	background-size: calc(var(--chat-bubble) * 1px);
-	border: calc(1px * var(--chat-bubble)) solid var(--text-danger);
-}
-
-.cozyMessage_d5deea.automodMessage_d5deea {
-	background: linear-gradient(var(--background-message-automod), var(--background-message-automod));
-	background-size: calc((1 - var(--chat-bubble)) * 1px);
-}
-
-.groupStart_d5deea.cozyMessage_d5deea.automodMessage_d5deea:hover .contents_ec86aa,
-.cozyMessage_d5deea.automodMessage_d5deea:not(.groupStart_d5deea):hover .contents_ec86aa>.markup_d6076c:not(:empty, .searchResultsWrap_c2b47d *) {
-	background: linear-gradient(var(--background-message-automod-hover), var(--background-message-automod-hover));
-	background-size: calc(var(--chat-bubble) * 1px);
-	border: calc(1px * var(--chat-bubble)) solid var(--text-danger);
-}
-
-.cozyMessage_d5deea.automodMessage_d5deea:hover {
-	background: linear-gradient(var(--background-message-automod-hover), var(--background-message-automod-hover));
-	background-size: calc((1 - var(--chat-bubble)) * 1px);
-}
-
-.groupStart_d5deea.cozyMessage_d5deea>.contents_ec86aa .markup_d6076c code,
-.cozyMessage_d5deea:not(.groupStart_d5deea)>.contents_ec86aa>.markup_d6076c:not(:empty, .searchResultsWrap_c2b47d *) code {
-	background: linear-gradient(var(--chat-bubble-code-background-color), var(--chat-bubble-code-background-color));
-	background-color: var(--background-secondary);
-	background-size: calc(var(--chat-bubble) * 1px);
-}
-
-.markup_d6076c blockquote,
-.markup_d6076c pre {
-	max-width: 100%;
-}
-
-
-.mentioned_d5deea {
-	background: none;
-}
-
 .message_d5deea:hover {
 	background-color: var(--background-message-hover) !important;
 }
@@ -1186,20 +1060,8 @@ Debuggerz1 - Math
 	filter: none;
 }
 
-.hasReply_ec86aa.mentioned_d5deea:not(:has(.roleMention_d6076c[style])):before,
-.mentioned_d5deea:before,
-.mentioned_d5deea .roleMention_d6076c:before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	width: 2px;
-	background-color: var(--info-warning-foreground);
-	filter: saturate(var(--saturation-factor, 1));
-}
 
-.hasReply_ec86aa.mentioned_d5deea:not(:has(.roleMention_d6076c[style])):after,
+.hasReply_ec86aa:not(:has(.roleMention_d6076c[style])):after,
 .mentioned_d5deea:after,
 .mentioned_d5deea .roleMention_d6076c:after {
 	content: "";
@@ -1208,28 +1070,6 @@ Debuggerz1 - Math
 	background-color: var(--background-mentioned);
 	z-index: -1;
 	filter: saturate(var(--saturation-factor, 1));
-}
-
-.roleMention_d6076c[style]:before {
-	background-color: currentColor;
-}
-
-.roleMention_d6076c[style]:after {
-	background: currentColor;
-	opacity: 0.1;
-}
-
-.roleMention_d6076c~[class*="ention"]:before,
-.roleMention_d6076c~[class*="ention"].roleMention_d6076c:after,
-.repliedMessage_ec86aa [class*="ention"]:before,
-.repliedMessage_ec86aa [class*="ention"]:after,
-.hasReply_ec86aa .mention:before,
-.hasReply_ec86aa .mention:after,
-.messageContent_ec86aa:has(.roleMention_d6076c) .mention:before,
-.messageContent_ec86aa:has(.roleMention_d6076c) .mention:after,
-.mentioned_d5deea:has([class*="ention"]):before,
-.mentioned_d5deea:has([class*="ention"]):after {
-	content: unset !important;
 }
 
 
@@ -3149,8 +2989,187 @@ path[d="M11 5V3C16.515 3 21 7.486 21 13H19C19 8.589 15.411 5 11 5ZM17 13H15C15 1
 }
 
 
+.overlayBackground_c69a7b .submenuPaddingContainer_d90b3d {
+	padding: 0
+}
+
+.statusItem_ad5fac>.svg_d48241 {
+	color: #fff
+}
+
+:is(#account-status-picker, #account-switch-account)+.layer_cd0de5 {
+	position: fixed;
+	top: none !important;
+	left: inherit !important
+}
+
+:is(#account-status-picker, #account-switch-account)+.layer_cd0de5 .submenu_d90b3d {
+	width: calc(var(--custom-user-profile-themed-container-user-popout-width) - 40px - 8px) !important;
+	outline: 1px solid var(--background-primary);
+	padding: 3px 10px;
+	display: flex;
+	align-items: center
+}
+
+#account .scroller_d90b3d>.item_d90b3d {
+	display: inline-flex;
+	justify-content: center;
+	border-radius: 8px;
+	margin: 0;
+	width: 100%
+}
+
+#account .thin_c49869 {
+	display: flex;
+	justify-content: space-between;
+	height: 32px;
+	padding: 0;
+	margin: 0;
+	overflow: hidden !important
+}
+
+#account .statusItem_ad5fac,
+#account .userMenuItem_e1268c {
+	display: flex
+}
+
+#account :is(.status_ad5fac, .description_ad5fac) {
+	display: none
+}
+
+#account .separator_d90b3d,
+#account-switch-account--manage-accounts>.label_d90b3d,
+.activeIcon_e1268c,
+.divider_ae36e5.divider_ad5fac,
+.userMenuUsername_e1268c {
+	display: none
+}
+
+#account .wrapper_c51b4e {
+	width: 100% !important;
+	display: flex;
+	justify-content: center
+}
+
+#account-switch-account--manage-accounts {
+	width: 32px !important;
+	height: 32px !important;
+	min-width: 32px;
+	min-height: 32px;
+	margin: 0;
+	padding: 0
+}
+
+#account-switch-account--manage-accounts::before {
+	width: 20px !important;
+	height: 20px !important;
+	position: absolute;
+	content: "";
+	background-image: url("https://feorev.github.io/Themes/Discord/assets/SettingsIcons/FriendRequests.svg");
+	background-size: contain;
+	filter: invert()
+}
 
 
+:root {
+	--chat-bubble: 1;
 
+	--chat-bubble-background-color: var(--background-secondary);
+	--chat-bubble-border-color: var(--background-secondary-alt);
+	--chat-bubble-code-background-color: var(--background-secondary-alt);
 
-.overlayBackground_c69a7b .submenuPaddingContainer_d90b3d{padding:0}.statusItem_ad5fac>.svg_d48241{color:#fff}:is(#account-status-picker,#account-switch-account)+.layer_cd0de5{position:fixed;top:none!important;left:inherit!important}:is(#account-status-picker,#account-switch-account)+.layer_cd0de5 .submenu_d90b3d{width:calc(var(--custom-user-profile-themed-container-user-popout-width) - 40px - 8px)!important;outline:1px solid var(--background-primary);padding:3px 10px;display:flex;align-items:center}#account .scroller_d90b3d>.item_d90b3d{display:inline-flex;justify-content:center;border-radius:8px;margin:0;width:100%}#account .thin_c49869{display:flex;justify-content:space-between;height:32px;padding:0;margin:0;overflow:hidden!important}#account .statusItem_ad5fac,#account .userMenuItem_e1268c{display:flex}#account :is(.status_ad5fac,.description_ad5fac){display:none}#account .separator_d90b3d,#account-switch-account--manage-accounts>.label_d90b3d,.activeIcon_e1268c,.divider_ae36e5.divider_ad5fac,.userMenuUsername_e1268c{display:none}#account .wrapper_c51b4e{width:100%!important;display:flex;justify-content:center}#account-switch-account--manage-accounts{width:32px!important;height:32px!important;min-width:32px;min-height:32px;margin:0;padding:0}#account-switch-account--manage-accounts::before{width:20px!important;height:20px!important;position:absolute;content:"";background-image:url("https://feorev.github.io/Themes/Discord/assets/SettingsIcons/FriendRequests.svg");background-size:contain;filter:invert()}
+	--chat-bubble-max-width: 90%;
+	--chat-bubble-border-radius: 8px;
+
+	--chat-bubble-box-shadow-h-offset: 0;
+	--chat-bubble-box-shadow-v-offset: 4px;
+	--chat-bubble-box-shadow-blur: 4px;
+
+	--chat-bubble-box-shadow-color-h: 0;
+	--chat-bubble-box-shadow-color-s: 0%;
+	--chat-bubble-box-shadow-color-l: 0%;
+	--chat-bubble-box-shadow-color-a: 0.16;
+}
+
+.groupStart_d5deea.cozyMessage_d5deea>.contents_f9f2ca,
+.cozyMessage_d5deea:not(.groupStart_d5deea)>.contents_f9f2ca>.markup_f8f345:not(:empty, .searchResultsWrap_c2b47d *) {
+	background: linear-gradient(var(--chat-bubble-background-color, var(--background-primary)), var(--chat-bubble-background-color, var(--background-primary)));
+	background-size: calc(var(--chat-bubble) * 1px);
+	max-width: calc(100% - ((100% - var(--chat-bubble-max-width)) * var(--chat-bubble)));
+	width: fit-content;
+	margin: 0;
+	padding: calc(7px * var(--chat-bubble)) calc(12px * var(--chat-bubble));
+	border-radius: calc(var(--chat-bubble-border-radius) * var(--chat-bubble));
+	border: calc(1px * var(--chat-bubble)) solid var(--chat-bubble-border-color, var(--background-primary-border-color));
+	box-shadow: var(--chat-bubble-box-shadow-h-offset) calc(var(--chat-bubble-box-shadow-v-offset) * var(--chat-bubble)) calc(var(--chat-bubble-box-shadow-blur) * var(--chat-bubble)) hsla(var(--chat-bubble-box-shadow-color-h), var(--chat-bubble-box-shadow-color-s), var(--chat-bubble-box-shadow-color-l), calc(var(--chat-bubble-box-shadow-color-a) * var(--chat-bubble)));
+}
+
+.cozyMessage_d5deea.automodMessage_d5deea:before,
+.cozyMessage_d5deea.ephemeral_d5deea:before,
+.cozyMessage_d5deea.mentioned_d5deea:before,
+.cozyMessage_d5deea.replying_d5deea:before {
+	width: calc(2px - (var(--chat-bubble) * 2px));
+}
+
+.groupStart_d5deea.cozyMessage_d5deea.mentioned_d5deea .contents_f9f2ca,
+.cozyMessage_d5deea.mentioned_d5deea:not(.groupStart_d5deea) .contents_f9f2ca>.markup_f8f345:not(:empty, .searchResultsWrap_c2b47d *) {
+	background: linear-gradient(var(--background-mentioned), var(--background-mentioned));
+	background-size: calc(var(--chat-bubble) * 1px);
+	border: calc(1px * var(--chat-bubble)) solid var(--info-warning-foreground);
+}
+
+.cozyMessage_d5deea.mentioned_d5deea {
+	background: linear-gradient(var(--background-mentioned), var(--background-mentioned));
+	background-size: calc((1 - var(--chat-bubble)) * 1px);
+}
+
+.groupStart_d5deea.cozyMessage_d5deea.replying_d5deea .contents_f9f2ca,
+.cozyMessage_d5deea.replying_d5deea:not(.groupStart_d5deea) .contents_f9f2ca>.markup_f8f345:not(:empty, .searchResultsWrap_c2b47d *),
+.groupStart_d5deea.cozyMessage_d5deea.ephemeral_d5deea .contents_f9f2ca,
+.cozyMessage_d5deea.ephemeral_d5deea:not(.groupStart_d5deea) .contents_f9f2ca>.markup_f8f345:not(:empty, .searchResultsWrap_c2b47d *) {
+	background: linear-gradient(var(--brand-experiment-05a), var(--brand-experiment-05a));
+	background-size: calc(var(--chat-bubble) * 1px);
+	border: calc(1px * var(--chat-bubble)) solid var(--brand-experiment);
+}
+
+.cozyMessage_d5deea.replying_d5deea,
+.cozyMessage_d5deea.ephemeral_d5deea {
+	background: linear-gradient(var(--brand-experiment-05a), var(--brand-experiment-05a));
+	background-size: calc((1 - var(--chat-bubble)) * 1px);
+}
+
+.groupStart_d5deea.cozyMessage_d5deea.automodMessage_d5deea .contents_f9f2ca,
+.cozyMessage_d5deea.automodMessage_d5deea:not(.groupStart_d5deea) .contents_f9f2ca>.markup_f8f345:not(:empty, .searchResultsWrap_c2b47d *) {
+	background: linear-gradient(var(--background-message-automod), var(--background-message-automod));
+	background-size: calc(var(--chat-bubble) * 1px);
+	border: calc(1px * var(--chat-bubble)) solid var(--text-danger);
+}
+
+.cozyMessage_d5deea.automodMessage_d5deea {
+	background: linear-gradient(var(--background-message-automod), var(--background-message-automod));
+	background-size: calc((1 - var(--chat-bubble)) * 1px);
+}
+
+.groupStart_d5deea.cozyMessage_d5deea.automodMessage_d5deea:hover .contents_f9f2ca,
+.cozyMessage_d5deea.automodMessage_d5deea:not(.groupStart_d5deea):hover .contents_f9f2ca>.markup_f8f345:not(:empty, .searchResultsWrap_c2b47d *) {
+	background: linear-gradient(var(--background-message-automod-hover), var(--background-message-automod-hover));
+	background-size: calc(var(--chat-bubble) * 1px);
+	border: calc(1px * var(--chat-bubble)) solid var(--text-danger);
+}
+
+.cozyMessage_d5deea.automodMessage_d5deea:hover {
+	background: linear-gradient(var(--background-message-automod-hover), var(--background-message-automod-hover));
+	background-size: calc((1 - var(--chat-bubble)) * 1px);
+}
+
+.groupStart_d5deea.cozyMessage_d5deea>.contents_f9f2ca .markup_f8f345 code,
+.cozyMessage_d5deea:not(.groupStart_d5deea)>.contents_f9f2ca>.markup_f8f345:not(:empty, .searchResultsWrap_c2b47d *) code {
+	background: linear-gradient(var(--chat-bubble-code-background-color), var(--chat-bubble-code-background-color));
+	background-color: var(--background-secondary);
+	background-size: calc(var(--chat-bubble) * 1px);
+}
+
+.markup_f8f345 blockquote,
+.markup_f8f345 pre {
+	max-width: 100%;
+}
