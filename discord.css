@@ -4261,14 +4261,6 @@ body:has(.vc-spotify-pause) #vc-spotify-song-title+div+div::before {
 	height: 9px;
 }
 
-.stickerAsset_cb3343 {
-	height: 0;
-	width: 0;
-	padding: 50%;
-	background: url(https://media.tenor.com/EYUlar2QIe4AAAAC/plink.gif);
-	background-size: contain;
-}
-
 path[d="M2 5a3 3 0 0 1 3-3h3.93a2 2 0 0 1 1.66.9L12 5h7a3 3 0 0 1 3 3v11a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V5Z"] {
 	fill: none;
 	stroke: currentColor;
