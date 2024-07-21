@@ -4296,3 +4296,55 @@ path[d="M2 5a3 3 0 0 1 3-3h3.93a2 2 0 0 1 1.66.9L12 5h7a3 3 0 0 1 3 3v11a3 3 0 0
 .container_cbd271:hover{
   margin-right: unset!important;
 }
+
+:root { 
+--username-bg1: url(//raw.githubusercontent.com/dwnas/assets/main/snippets/nameBackground/15.gif); /*
+                            To change the background, please edit the number. (1-16)
+*/}
+
+/* chat field */           
+[class*=contents]:has(img[src*="842366854697189447"]) [class*=username],
+/* memberlist */
+[role=listitem] :has(img[src*="842366854697189447"]) [class*=name-],
+/* settings profile card */
+[class*=profileCard] span,
+/* reviewdb */
+.vc-rdb-view :has(img[src*="842366854697189447"]) [class*=username],
+/* replies */
+[class*=repliedMessage]:has(img[src*="842366854697189447"]) [class*=username]
+ 
+ /* elements that aren't sized correctly, uncomment below if you want */
+
+/*,[class*=nameTag] [data-text-variant="text-sm/normal"],
+[class*=userPopoutInner]:has(img[src*="842366854697189447"]) [class*=nickname],
+[class*=voiceUser]:has([style*="842366854697189447"]) [class*=username]*/ 
+{
+    background-image: var(--username-bg1) !important;
+    text-shadow: 1px 1px 1px;
+}
+
+:root { 
+--username-bg2: url(//raw.githubusercontent.com/dwnas/assets/main/snippets/nameBackground/12.gif); /*
+                            To change the background, please edit the number. (1-16)
+*/}
+
+/* chat field */           
+[class*=contents]:has(img[src*="954064708489605140"]) [class*=username],
+/* memberlist */
+[role=listitem] :has(img[src*="954064708489605140"]) [class*=name-],
+/* settings profile card */
+[class*=profileCard] span,
+/* reviewdb */
+.vc-rdb-view :has(img[src*="954064708489605140"]) [class*=username],
+/* replies */
+[class*=repliedMessage]:has(img[src*="954064708489605140"]) [class*=username]
+ 
+ /* elements that aren't sized correctly, uncomment below if you want */
+
+/*,[class*=nameTag] [data-text-variant="text-sm/normal"],
+[class*=userPopoutInner]:has(img[src*="954064708489605140"]) [class*=nickname],
+[class*=voiceUser]:has([style*="954064708489605140"]) [class*=username]*/ 
+{
+    background-image: var(--username-bg2) !important;
+    text-shadow: 1px 1px 1px;
+}
