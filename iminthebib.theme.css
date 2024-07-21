@@ -3912,15 +3912,22 @@ scroller_d90b3d none_c49869 scrollerBase_c49869 {
 
 /* poi forever */
 [class^="panels_a4d4d9"]::before {
-	content: "";
-	width: 47px;
-	height: 47px;
-	left: 176px;
-	margin-top: -40px;
-	border-radius: 8px;
-	position: absolute;
-	background-repeat: no-repeat;
-	background-image: url('https://cdn.discordapp.com/emojis/1169424105708204172.webp?size=48&quality=lossless');
+    content: "";
+    width: 47px;
+    height: 47px;
+    left: 176px;
+    margin-top: -40px;
+    border-radius: 8px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-image: url('https://cdn.discordapp.com/emojis/1169424105708204172.webp?size=48&quality=lossless');
+    transition: background-image 0.5s ease-in-out;
+}
+
+[class^="panels_a4d4d9"]:hover::before {
+    margin-top: -48px;
+    width: 47px;
+    background-image: url('https://cdn.discordapp.com/emojis/1032642443583180840.webp?size=48&quality=lossless');
 }
 
 .container_b2ca13 {
@@ -4270,4 +4277,22 @@ path[d="M2 5a3 3 0 0 1 3-3h3.93a2 2 0 0 1 1.66.9L12 5h7a3 3 0 0 1 3 3v11a3 3 0 0
 
 .baseShapeRound_df8943{
   background-color: var(--online-indicator);
+}
+
+/*Small Member list*/
+.container_cbd271 {
+  transition: 0.5s ease-in-out;
+  margin-right: -180px;
+}
+.container_cbd271 .membersGroup_cbd271 {
+  transition: 0.5s ease-in-out;
+  height: 0px!important;
+  margin-top: -25px;
+}
+.container_cbd271:hover .membersGroup_cbd271 {
+  height: unset!important;
+  margin-top: unset!important;
+}
+.container_cbd271:hover{
+  margin-right: unset!important;
 }
