@@ -3916,18 +3916,18 @@ scroller_d90b3d none_c49869 scrollerBase_c49869 {
     width: 47px;
     height: 47px;
     left: 176px;
-    margin-top: -40px;
+    margin-top: -48px;
     border-radius: 8px;
     position: absolute;
     background-repeat: no-repeat;
-    background-image: url('https://cdn.discordapp.com/emojis/1169424105708204172.webp?size=48&quality=lossless');
-    transition: background-image 0.5s ease-in-out;
+    background-image: url('https://cdn.discordapp.com/emojis/1073371876761534534.webp?size=48&quality=lossless');
+    transition: background-image 0.6s ease-in-out;
 }
 
 [class^="panels_a4d4d9"]:hover::before {
     margin-top: -48px;
     width: 47px;
-    background-image: url('https://cdn.discordapp.com/emojis/1032642443583180840.webp?size=48&quality=lossless');
+    background-image: url('https://cdn.discordapp.com/emojis/1073371644904624158.webp?size=48&quality=lossless');
 }
 
 .container_b2ca13 {
